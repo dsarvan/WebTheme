@@ -1,10 +1,11 @@
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 2em;
   letter-spacing: 0;
   text-align: left;
   text-indent: 0;
   color: DarkCyan;
+  background-color: #ffffff;
 }
 
 p {
@@ -12,5 +13,6 @@ p {
   font-size: 1em;
   letter-spacing: 0;
   text-indent: 0;
-  color: rgb(100,100,90);
+  color: #000000;
+  background-color: #ffffff;
 }
