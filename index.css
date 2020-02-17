@@ -1,6 +1,7 @@
 h1 {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 2em;
+  font-weight: normal;
   letter-spacing: 0;
   text-align: left;
   text-indent: 0;
@@ -10,8 +11,19 @@ h1 {
 
 h3 {
   font-size: 1.4em;
+  font-weight: normal;
   letter-spacing: 0;
   text-align: left;
+  text-indent: 0;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+nav {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.3em;
+  font-weight: normal;
+  letter-spacing: 0;
   text-indent: 0;
   color: #000000;
   background-color: #ffffff;
@@ -20,6 +32,7 @@ h3 {
 p {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.3em;
+  font-weight: normal;
   letter-spacing: 0;
   text-indent: 0;
   color: #000000;
@@ -29,6 +42,7 @@ p {
 footer {
 	font-family: Georgia, "Times New Toman", Times, serif;
 	font-size: 1.3em;
+	font-weight: normal;
 	letter-spacing: 0;
 	text-indent: 0;
 	color: #000000;
