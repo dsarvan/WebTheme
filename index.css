@@ -8,11 +8,29 @@ h1 {
   background-color: #ffffff;
 }
 
+h3 {
+  font-size: 1.4em;
+  letter-spacing: 0;
+  text-align: left;
+  text-indent: 0;
+  color: #000000;
+  background-color: #ffffff;
+}
+
 p {
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1em;
+  font-size: 1.3em;
   letter-spacing: 0;
   text-indent: 0;
   color: #000000;
   background-color: #ffffff;
+}
+
+footer {
+	font-family: Georgia, "Times New Toman", Times, serif;
+	font-size: 1.3em;
+	letter-spacing: 0;
+	text-indent: 0;
+	color: #000000;
+	background-color: #ffffff;
 }
