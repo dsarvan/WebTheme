@@ -26,6 +26,8 @@
 
 		<hr />
 
+		When we run the command, the shell sees that it should execute that command, and then searches through the :-separated list of directories in $PATH for a file by that name. We can find out which file is executed for a given program name using the which command. We can also bypass $PATH entirely by giving the path to the file we want to execute. <br>	
+
 		<p>Sources list: /etc/apt/sources.list <br>
 		Console fonts: /usr/share/consolefonts/ </p>
 
@@ -33,42 +35,6 @@
 		dpkg-query -Wf '${Package; -40}${Essential}\n' | grep yes </p>
 
 
-		<p><ins>Xmonad:</ins><br>
-		Xmonad is a minimalist tiling window manager for X, written in Haskell. Windows are managed using automatic layout algorithm, which can be dynamically reconfigured. At any time windows are arranged so as to maximize the use of screen real estate. All features of the window manager are accessible purely from the keyboard. Xmonad is configured in Haskell, and custom layout algorithms may be implemented by the user in config files. A principle of Xmonad is predictability: the user should know in advance precisely the window arrangement that will result from any action.<br>
-
-<pre>
-	<code>
-		import XMonad
-		import XMonad.Hooks.DynamicLog
-		import XMonad.Hooks.ManageDocks
-		import XMonad.Util.Run(spawnPipe)
-		import XMonad.Util.EZConfig(additionalKeys)
-		import System.IO
-
-		main = do
-    		xmproc <- spawnPipe "/usr/bin/xmobar /home/ndayalan/.xmobarrc"
-
-    		xmonad $ defaultConfig
-        		{handleEventHook = handleEventHook defaultConfig <+> docksEventHook
-				, manageHook = manageDocks <+> manageHook defaultConfig 
-        		, layoutHook = avoidStruts $  layoutHook defaultConfig
-        		, logHook = dynamicLogWithPP xmobarPP
-                        		{ ppOutput = hPutStrLn xmproc
-                        		, ppTitle = xmobarColor "#dcdcdc" "" . shorten 20
-                        		}
-        		, modMask = mod4Mask     -- Rebind Mod to the Windows key
-				, focusedBorderColor = "#050606"
-				, normalBorderColor = "#050606"
-				, startupHook = myStartupHook
-        		} `additionalKeys`
-        		[ ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
-        		, ((0, xK_Print), spawn "scrot")
-        		]
-
-		myStartupHook = do
-				spawn "feh --bg-scale /home/ndayalan/Pictures/121317.png"
-	</code>
-</pre>
 
 		<hr />
 	</body>
