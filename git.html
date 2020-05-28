@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="generator" content="GitLab Pages">
+		<title>Dayalan Saravanan</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+		<h3>Git Reference:</h3> 
+		Create a new repository: <br>
+		git clone https://gitlab.com/username/Repository.git <br>
+		cd Repository <br>
+		touch README.md <br>
+		git add README.md <br>
+		git commit -m "add README" <br>
+		git push -u origin master <br><br>
+
+		Existing Directory: <br>
+		cd Directory <br>
+		git init <br>
+		git remote add origin https://gitlab.com/username/Repository.git <br>
+		git add . <br>
+		git commit -m "Initial commit"
+		git push -u origin master <br><br>
+
+		Existing Git repository: <br>
+		cd Repository <br>
+		git remote rename origin old_origin <br>
+		git remote add origin https://gitlab.com/username/Repository.git <br>
+		git push -u origin --all <br>
+		git push -u origin --tags <br>
+
+		
+		<br><h4>Git Cheat:</h4>
+		<p>Git Basics<p> 
+		<table>
+			<tr>
+				<td>git init <directory></td>		
+				<td>Create empty Git repo in specified directory. Run with no arguments
+				to initialize the current directory as a git repository.</td>
+			</tr>
+			<tr>
+				<td>git clone <repo></td> 
+				<td>Clone repo located at <repo> onto local machine. Original repo can
+		        be located on the local filesystem or on a remote machine via HTTP
+				or SSH.</td> 
+			</tr>
+			<tr>
+				<td>git config user.name <name></td>
+				<td>Define author name to be used for all commits in current repo. Devs
+				commonly use --global flag to set config options for current user.</td>
+			</tr>
+			<tr>
+				<td>git add <directory></td>
+				<td>Stage all changes in <directory> for the next commit. Replace
+				<directory> with a <file> to change a specific file.
+			</tr>
+			<tr>
+				<td>git commit -m "\<message\>"</td>
+				<td>Commit the staged snapshot, but instead of launching a text editor, use
+				<message> as the commit message.</td>
+			</tr>
+			<tr>
+				<td>git status</td>
+				<td>List which files are staged, unstaged, and untracked.</td>
+			</tr>
+			<tr>
+				<td>git log</td>
+				<td>Display the entire commit history using the default format. For
+				customization see additional options.</td>
+			</tr>
+			<tr>
+				<td>git diff</td>
+				<td>Show unstaged changes between your index and working directory.</td>
+			</tr>
+		</table> <br>
+
+		<p>Undoing Changes</p>
+		<table>
+			<tr>
+				<td>git revert <commit></td>
+				<td>Create new commit that undoes all of the changes made in <commit>, then
+				apply it to the current branch.</td>
+			</tr>
+			<tr>
+				<td>git reset <file></td>
+				<td>Remove <file> from the staging area, but leave the working directory
+				unchanged. This unstages a file without overwriting any changes.</td>
+			</tr>
+			<tr>
+				<td>git clean -n</td>
+				<td>Shows which files would be removed from working directory. Use the -f
+				flag in place of the -n flag to execute the clean.</td>
+			</tr>
+		</table> <br>
+
+		<p>Rewriting Git history</p>
+		<table>
+			<tr>
+				<td>git commit --amend</td>
+				<td>Replace the last commit with the staged changes and last commit
+				combined. Use with nothing staged to edit the last commit's message.</td>
+			</tr>
+			<tr>
+				<td>git rebase <base></td>
+				<td>Rebase the current branch onto <base>. <base> can be a commit ID, branch
+				name, a tag, or a relative reference to HEAD.</td>
+			</tr>
+			<tr>
+				<td>git reflog</td>
+				<td>Show a log of changes to the local repository's HEAD. Add --relative-
+				date flag to show date info or --all to show all refs.</td>
+			</tr>
+		</table><br>
+
+		<p>Git Branches</p>
+		<table>
+			<tr>
+				<td>git branch</td>
+				<td>List all of the branches in your repo. Add a <branch> argument to create
+				a new branch with the name <branch>.</td>
+			</tr>
+			<tr>
+				<td>git checkout -b <branch></td>
+				<td>Create and check out a new branch named <branch>. Drop the -b flag to
+				checkout an existing branch.</td>
+			</tr>
+			<tr>
+				<td>git merge <branch></td>
+				<td>Merge <branch> into the current branch.</td>
+			</tr>
+		</table><br>
+
+		<p>Remote Repositories</p>
+		<table>
+			<tr>
+				<td>git remote add <name> <url></td>
+				<td>Create a new connection to a remote repo. After adding a remote, you can
+				use <name> as a shortcut for <url> in other commands.</td>
+			</tr>
+			<tr>
+				<td>git fetch <remote> <branch></td>
+				<td>Fetches a specific <branch>, from the repo. Leave off <branch> to fetch
+				all remote refs.</td>
+			</tr>
+			<tr>
+				<td>git pull <remote></td>
+				<td>Fetch the specified remote's copy of current branch and immediately
+				merge it into the local copy.</td>
+			</tr>
+			<tr>
+				<td>git push <remote> <branch></td>
+				<td>Push the branch to <remote>, along with necessary commits and objects.
+				Creates named branch in the remote repo if it doesn't exist.</td>	
+			</tr>
+		</table><br>
+
+		<p>Git Config</p>
+		<table>
+			<tr>
+				<td>git config --global user.name <name></td>
+				<td>Define the author name to be used for all commits by the current
+				user.</td>
+			</tr>
+			<tr>
+				<td>git config --global user.email <email></td>
+				<td>Define the author email to be used for all commits by the current 
+				user.</td>
+			</tr>
+			<tr>
+				<td>git config --global alias. <alias-name> <git-command></td>
+				<td>Create shortcut for a Git command. Eg. alias.glog "log --graph 
+				--oneline" will set ""git glog" equivalent to "git log --graph --oneline.
+				</td>
+			</tr>
+			<tr>
+				<td>git config --system core.editor <editor></td>
+				<td>Set text editor used by commands for all users on the machine. <editor>
+				arg should be the command that launches the desired editor (Eg. vi).<\td>
+			</tr>
+			<tr>
+				<td>git config --global --edit</td>
+				<td>Open the global configuration file in a text editor for manual editing.
+				</td>
+			</tr>
+		</table>
+
+		<p>Git Log</p>
+		<table>
+			<tr>
+				<td>git log --<limit></td>
+				<td>Limit number of commits by <limit>. Eg. "git log -5" will limit to 5
+				commits.</td>
+			</tr>
+			<tr>
+				<td>git log --oneline</td>
+				<td>Condense each commit to a single line.</td>
+			</tr>
+			<tr>
+				<td>git log -p</td>
+				<td>Display the full diff of each commit.</td>
+			</tr>
+			<tr>
+				<td>git log --stat</td>
+				<td>Include which files were altered and the relative number of lines that
+				were added or deleted from each of them.</td>
+			</tr>
+			<tr>
+				<td>git log --author="<pattern>"</td>
+				<td>Search for commits by a particular author.</td>
+			</tr>
+			<tr>
+				<td>git log --grep="<pattern>"</td>
+				<td>Search for commits with a commit message that matches <pattern>.</td>
+			</tr>
+			<tr>
+				<td>git log <since>..<until></td>
+				<td>Show commits that occur between <since> and <until>. Args can be a 
+				commit ID, branch name, HEAD, or any other kind of revision reference.</td>
+			</tr>
+			<tr>
+					<td>git log -- <file></td>
+					<td>Only display commits that have the specified file.</td>
+			</tr>
+			<tr>
+					<td>git log --graph --decorate</td>
+					<td>--graph flag draws a text based graph of commits on left side of
+					commit msgs. --decorate adds names of branches or tags of commits
+					shown.</td>
+			</tr>
+		</table><br>
+
+		<p>Git Diff</p>
+		<table>
+			<tr>
+				<td>git diff HEAD</td>
+				<td>Show difference between working directory and last commit.</td>
+			</tr>
+			<tr>
+				<td>git diff --cached</td>
+				<td>Show difference between staged changes and last commit.</td>
+			</tr>
+		</table><br>
+
+		<p>Git Reset</p>
+		<table>
+			<tr>
+				<td>git reset</td>
+				<td>Reset staging area to match most recent commit, but leave the working
+				directory unchanged.</td>
+			</tr>
+			<tr>
+		  		<td>git reset --hard</td>
+				<td>Reset staging area and working directory to match most recent commit and
+				overwrites all changes in the working directory.</td>
+			</tr>
+			<tr> 
+				<td>git reset <commit></td>
+				<td>Move the current branch tip backward to <commit>, reset the staging area
+				to match, but leave the working directory alone.</td>
+			</tr>
+			<tr>
+				<td>git reset -hard <commit></td>
+				<td>Same as previous, but resets both the staging area & working directory
+				to match. Deletes uncommitted changes, and ll commits after <commit>.</td>
+			</tr>
+		</table><br>
+
+		<p>Git Rebase</p>
+		<table>
+			<tr>
+				<td>git rebase -i <base></td>
+				<td>Interactively rebase current branch onto <base>. Launches editor to
+				enter commands for how each commit will be transerred to the new base.</td>
+			</tr>
+		</table><br>
+
+		<p>Git Pull</p>
+		<table>
+			<tr>
+				<td>git pull --rebase <remote></td>
+				<td>Fetch the remote's copy of current branch and rebases it into the local
+				copy. Uses git rebase instead of merge to integrate the branches.</td>
+			</tr>
+		</table><br>
+
+		<p>Git Push</p>
+		<table>
+			<tr>
+				<td>git push <remote> --force</td>
+				<td>Forces the git push even if it results in a non-fast-forward merge. Do
+				not use the --force flag unless you're absolutely sure you know what you're
+				doing.</td>
+			</tr>
+			<tr>
+				<td>git push <remote> --all</td>
+				<td>Push all of your local branches to the specified remote.</td>
+			</tr>
+			<tr>
+				<td>git push <remote> --tags</td>
+				<td>Tags aren't automatically pushed when you push a branch or use the --all
+				flag. The --tags flag sends all of your local tags to the remote repo.</td>
+			</tr>
+		</table><br>
+
+</html>
