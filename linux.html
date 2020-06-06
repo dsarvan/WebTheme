@@ -9,24 +9,30 @@
 	</head>
 
 	<body style="background: #ffffff;" onload="onPageLoad();">
+
 		<div>
 			<header>
-				<h2>Dayalan Saravanan</h2>
-				<nav>
-					<a href="index.html" class="current">Home</a> |
-					<a href="datascience.html">DataScience</a> |
-					<a href="linux.html">Linux</a> |
-					<a href="math.html">Math</a> |
-					<a href="music.html">Music</a> |
-					<a href="numerical.html">Numerical</a> |
-					<a href="programming.html">Programming</a>
-				</nav>
+					<h2>Dayalan Saravanan</h2>
 			</header>
+
+			<sidenav>
+				<a href="index.html" class="current">Home</a> <br><br>
+				<a href="datascience.html">DataScience</a> <br><br> 
+				<a href="linux.html">Linux</a> <br><br>
+				<a href="math.html">Math</a> <br><br>
+				<a href="music.html">Music</a> <br><br>
+				<a href="numerical.html">Numerical</a> <br><br>
+				<a href="programming.html">Programming</a>
+			</sidenav>
 		</div>
 
 		<hr />
 
-		When we run the command, the shell sees that it should execute that command, and then searches through the :-separated list of directories in $PATH for a file by that name. We can find out which file is executed for a given program name using the which command. We can also bypass $PATH entirely by giving the path to the file we want to execute. <br>	
+		When we run the command, the shell sees that it should execute that command, and
+		then searches through the :-separated list of directories in $PATH for a file by
+		that name. We can find out which file is executed for a given program name using the
+		which command. We can also bypass $PATH entirely by giving the path to the file we
+		want to execute. <br>
 
 		<p>Sources list: /etc/apt/sources.list <br>
 		Console fonts: /usr/share/consolefonts/ </p>
@@ -34,15 +40,16 @@
 		<p>To list essential packages in Debian: <br>
 		dpkg-query -Wf '${Package; -40}${Essential}\n' | grep yes </p>
 
-
+		Linux System Administration <a href="https://decal.ocf.berkeley.edu/">DeCal<a>
 
 		<hr />
-	</body>
 
-	<dev>
-		<footer>
-			&copy; 2020 Dayalan Saravanan
-		</footer>
-	</dev>
+		<dev>
+			<footer>
+				&copy; 2020 Dayalan Saravanan
+			</footer>
+		</dev>
+
+	</body>
 
 </html>
