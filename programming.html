@@ -9,55 +9,60 @@
 	</head>
 
 	<body style="background: #ffffff;" onload="onPageLoad();">
+
 		<div>
 			<header>
 				<h2>Dayalan Saravanan</h2>
-				<nav>
-					<a href="index.html" class="current">Home</a> |
-					<a href="datascience.html">DataScience</a> |
-					<a href="linux.html">Linux</a> |
-					<a href="math.html">Math</a> |
-					<a href="music.html">Music</a> |
-					<a href="numerical.html">Numerical</a> |
-					<a href="programming.html">Programming</a>
-				</nav>
 			</header>
+
+			<sidenav>
+				<a href="index.html" class="current">Home</a> <br><br>
+				<a href="datascience.html">DataScience</a> <br><br>
+				<a href="linux.html">Linux</a> <br><br>
+				<a href="math.html">Math</a> <br><br>
+				<a href="music.html">Music</a> <br><br>
+				<a href="numerical.html">Numerical</a> <br><br>
+				<a href="programming.html">Programming</a>
+			</sidenavnav>
 		</div>
 
 		<hr />
 
-		<p><ins>Python:</ins></p>
-		<p><ins>Creating a virtual environment:</ins> <br><br>
+		<!-- <div class="column"> -->
+		<p><ins>Python:</ins></p> 
+		<p><ins>Creating a virtual environment:</ins> <br>
 		In Python 3.6+, the recommended way to create a virtual environment is to run: <br>
-        $ python3 -m venv /path/to/new/virtual/environment <br>
-        Make sure that python3 resolves to whichever version of python3 you'd like to bind
+       	$ python3 -m venv /path/to/new/virtual/environment <br>
+       	Make sure that python3 resolves to whichever version of python3 you'd like to bind
 		to your virtual environment. For example, to create a new virtual environment named
 		dsci in your home directory, you could run: <br>
 		$ python3 -m venv ~/dsci <br>
 		To activate a virtual environment on macOS or Linux running bash or zsh, source the 
 		following path: <br>
-        $ source ~/dsci/bin/activate and for deactivation: $ deactivate </p> 
+       	$ source ~/dsci/bin/activate and for deactivation: $ deactivate </p> 
 
-		<p><ins>Managing packages with pip:</ins> <br><br>
-		$ pip search pkg_name <br>
-		$ pip show pkg_name <br>
-		$ pip install pkg_name <br>
-		$ pip install pkg_name==version_number <br>
-		$ pip install --upgrade pkg_name <br>
+		<p><ins>Managing packages with pip:</ins> <br>
+		$ pip search &lt;pkg_name&glt; <br>
+		$ pip show &lt;pkg_name&gt; <br>
+		$ pip install &lt;pkg_name&gt; <br>
+		$ pip install &lt;pkg_name==version_number&gt; <br>
+		$ pip install --upgrade &lt;pkg_name&gt; <br>
 		$ pip list <br>
 		$ pip freeze > requirements.tat <br>
 		$ pip install -r requirements.txt </p>
+		<!-- </div> -->
 
-		Vim Reference <a href="vim.html">File</a> <br><br>
-		Git Reference <a href="git.html">File</a>
+		<!--<div class="list">-->
+		<a href="vim.html" style="text-decoration: none">Vim Reference</a> <br>
+		<a href="git.html" style="text-decoration: none">Git Reference</a>
+		<!--</div>-->
 
 		<hr />
-	</body>
 
-	<dev>
 		<footer>
 			&copy; 2020 Dayalan Saravanan
 		</footer>
-	</dev>
+
+	</body>
 
 </html>
