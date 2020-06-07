@@ -12,6 +12,7 @@ body {
   margin: 140px;
   margin-top: -5.0em;
   margin-bottom: -5.0em;
+  margin-right: -3.0em;
   color: #121317;
   background-color: #ffffff;
 }
@@ -81,13 +82,12 @@ sidenav {
   letter-spacing: 0;
   text-indent: 0;
   color: #121317;
-  background-color: #f3f3f3;
+  background-color: #999999;
 }
 
 sidenav a {
   padding: 6px 8px 6px 16px;
 }
-
 
 .column {
   float: left;
