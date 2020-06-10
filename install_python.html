@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="generator" content="GitLab Pages">
+		<title>Dayalan Saravanan's homepage</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+	<body style="background: #ffffff;" onload="onPageLoad();">
+
+		<div>
+			<header>
+				<h2>Dayalan Saravanan</h2>
+			</header>
+
+			<sidenav>
+				<a href="index.html" class="current">Home</a> <br><br>
+				<a href="datascience.html">DataScience</a> <br><br> 
+				<a href="linux.html">Linux</a> <br><br>
+				<a href="math.html">Math</a> <br><br>
+				<a href="music.html">Music</a> <br><br>
+				<a href="numerical.html">Numerical</a> <br><br>
+				<a href="programming.html">Programming</a>
+			</sidenav>
+		</div>
+
+		<hr />
+
+		<h4>Python Installation</h4>
+		<p>Instructions for installing the latest Python instead of (or alongside) an older
+		version on Linux:</p>
+
+		<p>Use the <code>python --version</code> command to check the version installed. If
+		Python is not installed on your system, or you want to install an updated version,
+		follow the steps below.</p>
+
+		<ol>
+		<li>Install required development packages to build Python: <br>
+				<p>Debian:</p>
+				<code>$ sudo apt-get update</code> <br>
+				<code>$ sudo apt-get install build-essential zliblg-dev 
+						libncurses5-dev libgdbm-dev libnss3-dev 
+						libssl-dev libreadline-dev libffi-dev curl</code> <br>
+
+				<p>Fedora:</p>
+				<code>$ sudo dnf groupinstall development</code>
+		</li> <br>
+
+		<li>Download the latest stable release of Python: <br>
+				<p>Visit the <a href="https://www.python.org/">https://www.python.org/</a>
+				and download the latest version. After the download is complete, you have a
+				<code>.tar.xz</code> archive file containing the source code of Python. </p>
+		</li> <br>
+
+		<li>Extract the tar.xz:  
+				<code>$ tar -xfv Python-3.*.tar.xz</code>
+		</li> <br>
+
+		<li>Configure the script: <br>
+				<p>Navigate to the configure script and execute it in your terminal.</p>
+				<code>$ cd Python-3.*</code> <br>
+				<code>$ ./configure</code>
+		</li> <br>
+
+		<li>Start the build process: <br>
+				<p>If you already have a version of Python installed on your system and you
+				want to install the new version alongside it, use the command:</p>
+				<code>$ sudo make altinstall</code>
+
+				<p>If you want to replace your current version of Python with this new
+				version, you should uninstall your current Python package using your package
+				manager and then install:</p>
+				<code>$ sudo make install</code>
+		</li> <br>
+
+		<li>Verify the installation: <br>
+				<p>If you haven't encountered any errors, the Python is now installed on
+				your system. To verify it, write these in your terminal:</p>
+				<code>$ python3 --version</code>
+		</li> <br>
+		</ol>
+
+		<h4>Create a virtual environment: </h4>
+		<p>Python provides a package known as <code>venv</code>, which helps you isolate a
+		program directory or a package.</p>
+		<p>To create a virtual environment: </p>
+		<code>$ python3 -m venv env</code>
+		<p>To activate the virtual environment: </p>
+		<code>$ source env/bin/activate</code> <br>
+		<code>(env) $</code>
+		<p>Notice that your terminal prompt <code>$</code> is now preceeded by an 
+		environment name.</p>
+		<p>To deactivate the virtual environment: </p>
+		<code>(env) $ deactivate</code>
+
+		<hr />
+
+		<dev>
+			<footer>
+				&copy; 2020 Dayalan Saravanan
+			</footer>
+		</dev>
+
+	</body>
+
+</html>
