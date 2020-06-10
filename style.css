@@ -130,6 +130,12 @@ footer {
   background-color: #ffffff;
 }
 
+code {
+		font-family: monospace;
+		font-size: 110%;
+}
+	
+
 /*LaTeX into html CSS generated*/ 
 /* start css.sty */
 .ptmr7t-x-x-109{font-family: monospace;}
