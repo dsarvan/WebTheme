@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="generator" content="GitLab Pages">
+		<title>Dayalan Saravanan's homepage</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+
+	<body style="background: #ffffff;" onload="onPageLoad();">
+
+		<div>
+			<header>
+				<h2>Dayalan Saravanan</h2>
+			</header>
+
+			<sidenav>
+				<a href="index.html" class="current">Home</a> <br><br>
+				<a href="datascience.html">DataScience</a> <br><br> 
+				<a href="linux.html">Linux</a> <br><br>
+				<a href="math.html">Math</a> <br><br>
+				<a href="music.html">Music</a> <br><br>
+				<a href="numerical.html">Numerical</a> <br><br>
+				<a href="programming.html">Programming</a>
+			</sidenav>
+		</div>
+
+		<hr />
+
+		<h4>R Installation</h4>
+		<p>Instructions for installing the latest R version in Debian 10 and add packages
+		from the offical <a href="https://cloud.r-project.org/">Comprehensive R Archive
+		Network (CRAN)</a>:</p>
+
+		<ol>
+		<li>Installing Dependencies: <br>
+				<p>Because R is a fast-moving project, the latest stable version isn't
+				always available from Debian's repositories, so we'll need to add the
+				external repository maintained by CRAN. In order to do this, we'll need to
+				install some dependencies for the Debian 10.</p>
+
+				<p>To perform network operations that manage and download certificates, we
+				need to install <code>dirmngr</code> so that we can add the external 
+				repository.</p>
+
+				<code>$ sudo apt-get install dirmngr --install-recommends</code>
+
+				<p>To add a PPA reference to Debian, we'll need to use the <code>add-apt-
+				repository</code> command. For installations where this command may not
+				available, you can add this utility to your system by installing <code>
+				software-properties-common</code>:</p>
+
+				<code>$ sudo apt-get install software-properties-common</code>
+
+				<p>Finally, to ensure that we have HTTPS support for secure protocols, we'll
+				install the following tool:</p>
+
+				<code>$ sudo apt-get install apt-transport-https</code>
+		</li> <br>
+
+		<li>Installing R: <br>
+				<p>For the most recent version of R, we'll be installing from the CRAN
+				repositories.</p>
+
+				<p>Let's first add the relevant GPG key.</p>
+
+				<code>$ sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C@AD5F960A256A04AF'</code>
+
+				<p>Once we have the trusted key, we can add the repository. Note that if 
+				you're not using Debian 10 (Buster), you can look at the <a href="https://
+				cran.r-project.org/bin/linux/debian/#supported-branches"> supported R 
+				Project Debian branches</a>, named for each release.</p>
+
+				<code>$ sudo add-apt-repository 'deb http://cloud.r-project.org/bin/linux/debian buster-cran35/'</code>
+
+				<p>Now, we'll need to run update after this in order to include package
+				manifests from the new repository.</p>
+
+				<code>$ sudo apt-get update</code>
+
+				<p>Once this completes running and you're returned to your prompt, we're
+				ready to install R with the following command.</p>
+
+				<code>$ sudo apt-get install r-base</code>
+
+				<p>If prompted to confirm installation, press y to continue.</p>
+
+				<p>To install a package for every user on the system, start R as root so
+				that the libraries will be available to all users automatically. Similarly,
+				if you run the R command without <code>sudo</code>, a personal library can
+				be set up for the user.</p>
+
+				<code>$ sudo -i R</code>
+		</li> <br>
+
+		<li>Installing R Packages from CRAN: <br>
+				<p>Part of R's strength is it available abundance of add-on packages. For
+				demonstration purposes, we'll install <code>txtplot</code>, a library that
+				outputs ASCII graphs that include scatterplot, line plot, density plot, acf
+				and bar charts:</p>
+
+				<code>> install.packages('txtplot')</code>
+
+				<p>When the installation is complete, we can load <code>txtplot</code>:</p>
+
+				<code>> library('txtplot')</code>
+
+				<p>If you're interested to learn more about <code>txtplot</code>, use 
+				<code>help(txtplot)</code> from within the R interpreter.</p>
+
+				<p>Any precompiled package can be installed from CRAN with <code>install.
+				packages()</code>. Find a listing of official packages organized by name
+				via the <a href="https://cran.r-project.org/web/packages/available_packages_
+				by_name.html">CRAN packages by name list.</a></p>
+
+				<p>To quit R, you can type <code>q()</code>. Unless you want to save the
+				workspace image, you can press <code>n</code>.
+		</li> <br>
+
+		<li>Updating packages: <br>
+				<p>The command <code>update.packages()</code> is the simplest way to ensure
+				that all the packages on your system are up to date. It downloads the list 
+				of available packages and their current versions, compares it with those
+				installed and offers to fetch and install any that have later versions on 
+				the repositories.</p>
+
+				<p>An alternative interface to keeping packages up-to-date is provided by
+				the command <code>packageStatus()</code>, which returns an object with
+				information on all installed packages and packages available at multiple
+				repositories. The <code>print</code> and <code>summary</code> methods give
+				an overview of installed and available packages, the <code>upgrade</code>
+				method offers to fetch and install the latest versions of outdated packages.
+				</p>
+
+				<p>One sometimes-useful additional piece of information that <code>
+				packageStatus()</code> returns is the status of a package, as <code>
+				"ok"</code>, <code>"upgrade"</code> or <code>"unavailable"</code> (in the 
+				currently selected repositories). For example</p>
+
+				<code>> inst <- packageStatus()$inst</code> <br>
+				<code>> inst[inst$Status != "ok", c("Package", "Version", "Status")]</code>
+		</li> <br>
+
+		<li>Removing packages: <br>
+				<p>From a running R process they can be removed by</p>
+
+				<code>> remove.packages(c("pkg1", "pkg2"), lib = file.path("path/to/library"))</code>
+				<p>Finally, one can just remove the package directory from the library.</p>
+		</li> <br>
+		</ol> 
+
+		<h4>Resources for R programming</h4>
+		<p>The official intro, "An Introduction to R", available online in <a href="https://cran.r-project.org/doc/manuals/R-intro.html">html</a> version.</p>
+
+		<hr />
+
+		<dev>
+			<footer>
+				&copy; 2020 Dayalan Saravanan
+			</footer>
+		</dev>
+
+	</body>
+
+</html>
